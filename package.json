@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "tests": "jest",
+    "htmlhint": "htmlhint src/*.html test/*.html",
+    "eslint": "eslint --ext .js src/",
+    "pretest": "npm run eslint --silent && npm run htmlhint"
+  },
+  "name": "homeschooling",
+  "description": "## Preámbulo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItzelMB/GDL002-social-network.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItzelMB/GDL002-social-network/issues"
+  },
+  "homepage": "https://github.com/ItzelMB/GDL002-social-network#readme"
+}
