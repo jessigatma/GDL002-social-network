@@ -1,4 +1,4 @@
-const registerUser = (email, password) => {
+export const registerUser = (email, password) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function () {
             checkEmail()
@@ -6,19 +6,20 @@ const registerUser = (email, password) => {
         .catch(error => document.getElementById('error-m').innerHTML = `${error.message}`)
 };
 
-const loginUserWithEmail = (email, password) => {
+export const loginUserWithEmail = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(error => document.getElementById('error-m').innerHTML = `${error.message}`)
 };
 
 //Ingresar con cuenta google (Documentación de Firebase)
- const gmailLogIn = () => {
+ export const gmailLogIn = () => {
     let provider = new firebase.auth.GoogleAuthProvider(); //Se crea una instancia del objeto del proveedor de Google
     firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API. (acceso a google)
         let token = result.credential.accessToken;
         // The signed-in user info. (informacion del usuario que inicia sesión)
         let user = result.user;
+
         // ...
     }).catch(function (error) {
         // Handle Errors here. (manejar errores)

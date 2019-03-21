@@ -1,4 +1,4 @@
-
+import {registerUser, gmailLogIn, loginUserWithEmail} from '../js/auth.js';
 
  //const textEmail = document.getElementById('email');
   //const textPassword = document.getElementById('password');
