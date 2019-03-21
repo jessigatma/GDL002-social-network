@@ -1,28 +1,34 @@
-const textEmail = document.getElementById('email');
-const textPassword = document.getElementById('password');
-const btnLogin = document.getElementById('btnLogin');
-const btnSignUp = document.getElementById('btnSignUp');
-const btnLogout = document.getElementById('btnLogout');
+const registerUser = (email, password) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(function () {
+            checkEmail()
+        })
+        .catch(error => document.getElementById('error-m').innerHTML = `${error.message}`)
+};
 
-btnLogin.addEventListener('click', e => {
-  //obtener email y password
-  const email = textEmail.value;
-  const pass = textPassword.value;
-  const auth = firebase.auth();
-  //sign in
-  const promise = auth.signInWithEmailAndPassword(email,pass);
-  promise.catch(e=>console.log(e.message));
-});
+const loginUserWithEmail = (email, password) => {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .catch(error => document.getElementById('error-m').innerHTML = `${error.message}`)
+};
 
-btnSignUp.addEventListener('click', e => {
-  //obtener email y password
-  const email = textEmail.value;
-  const pass = textPassword.value;
-  const auth = firebase.auth();
-  //sign in
-  const promise = auth.createUserWithEmailAndPassword(email,pass);
-  promise.catch(e=>console.log(e.message));
-});
-;
+//Ingresar con cuenta google (Documentación de Firebase)
+ const gmailLogIn = () => {
+    let provider = new firebase.auth.GoogleAuthProvider(); //Se crea una instancia del objeto del proveedor de Google
+    firebase.auth().signInWithPopup(provider).then(function (result) {
+        // This gives you a Google Access Token. You can use it to access the Google API. (acceso a google)
+        let token = result.credential.accessToken;
+        // The signed-in user info. (informacion del usuario que inicia sesión)
+        let user = result.user;
+        // ...
+    }).catch(function (error) {
+        // Handle Errors here. (manejar errores)
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        // The email of the user's account used. (email de la cuenta de usuario utilizado)
+        let email = error.email;
+        // The firebase.auth.AuthCredential type that was used. (tipo de identificador usado por firebase)
+        let credential = error.credential;
+        // ...
+    });
 
-
+};

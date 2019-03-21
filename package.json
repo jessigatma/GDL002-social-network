@@ -12,7 +12,9 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "firebase": "^5.9.0"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",
