@@ -1,14 +1,14 @@
 export const registerUser = (email, password) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function () {
-            checkEmail()
+            //checkEmail();
         })
-        .catch(error => document.getElementById('error-m').innerHTML = `${error.message}`)
+        .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');
 };
 
 export const loginUserWithEmail = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
-        .catch(error => document.getElementById('error-m').innerHTML = `${error.message}`)
+        .catch(error => document.getElementById('error-m').innerHTML = 'Usuario sin registrarse');
 };
 
 //Ingresar con cuenta google (Documentación de Firebase)
@@ -19,6 +19,7 @@ export const loginUserWithEmail = (email, password) => {
         let token = result.credential.accessToken;
         // The signed-in user info. (informacion del usuario que inicia sesión)
         let user = result.user;
+        console.log(user);
 
         // ...
     }).catch(function (error) {
@@ -30,6 +31,7 @@ export const loginUserWithEmail = (email, password) => {
         // The firebase.auth.AuthCredential type that was used. (tipo de identificador usado por firebase)
         let credential = error.credential;
         // ...
+        document.getElementById('error-m').innerHTML = errorCode + errorMessage + email + credential;
     });
 
 };

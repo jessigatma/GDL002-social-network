@@ -1,10 +1,27 @@
 import {registerUser, gmailLogIn, loginUserWithEmail} from '../js/auth.js';
 
- //const textEmail = document.getElementById('email');
-  //const textPassword = document.getElementById('password');
-  //const btnLogin = document.getElementById('btnLogin');
-  //const btnSignUp = document.getElementById('btnSignUp');
-  const btnLogout = document.getElementById('btnLogout');
+//-------------------------window.history.pushstate-------------------------
+let tabs = document.querySelectorAll('[data-tab-for]');
+
+        history.replaceState({
+          tabForId:tabs[0].dataset.tabFor
+        },null, tabs[0].dataset.tabFor);
+
+
+    const showRegister = () =>{
+        tabs[1].classList.remove('hide');
+        tabs[1].classList.add('active');
+
+        tabs[0].classList.remove('active');
+        tabs[0].classList.add('hide');
+
+        history.pushState({
+          tabForId: tabs[1].dataset.tabFor
+        }, null, tabs[1].dataset.tabFor);
+      }
+document.getElementById('createAccount').addEventListener('click',showRegister, false);
+
+  //const btnLogout = document.getElementById('btnLogout');
 
 //registar al usuario.
 const registerWithEmailAndPassword = () => {
@@ -16,8 +33,8 @@ const registerWithEmailAndPassword = () => {
 
 //iniciar sesion con el password
 const signInWithEmailAndPassword = () => {
-     const textEmail = email.value;
-     const textPassword = password.value;
+     const textEmail = document.getElementById('email').value;
+     const textPassword = document.getElementById('password').value;
      loginUserWithEmail(textEmail, textPassword);
   };
   document.getElementById('btnLogin').addEventListener('click', signInWithEmailAndPassword);
@@ -26,32 +43,6 @@ const signInWithEmailAndPassword = () => {
 //iniciar sesion con google
 const logInGoogle = () => {
      //alert("hola")
-     gmailLogIn()
-  }
+     gmailLogIn();
+  };
   document.getElementById('btnGmail').addEventListener('click', logInGoogle);
-
-
-
-
-
-
-/*
-  btnLogin.addEventListener('click', e => {
-    //obtener email y password
-    const email = textEmail.value;
-    const pass = textPassword.value;
-    const auth = firebase.auth();
-    //sign in
-    const promise = auth.signInWithEmailAndPassword(email,pass);
-    promise.catch(e=>console.log(e.message));
-  });
-
-  btnSignUp.addEventListener('click', e => {
-    //obtener email y password
-    const email = textEmail.value;
-    const pass = textPassword.value;
-    const auth = firebase.auth();
-    //sign in
-    const promise = auth.createUserWithEmailAndPassword(email,pass);
-    promise.catch(e=>console.log(e.message));
-  });*/

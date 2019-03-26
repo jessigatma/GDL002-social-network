@@ -1,0 +1,25 @@
+[debug] [2019-03-26T17:55:11.940Z] ----------------------------------------------------------------------
+[debug] [2019-03-26T17:55:11.942Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-03-26T17:55:11.942Z] CLI Version:   6.5.0
+[debug] [2019-03-26T17:55:11.942Z] Platform:      darwin
+[debug] [2019-03-26T17:55:11.942Z] Node Version:  v10.15.0
+[debug] [2019-03-26T17:55:11.942Z] Time:          Tue Mar 26 2019 11:55:11 GMT-0600 (Central Standard Time)
+[debug] [2019-03-26T17:55:11.942Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-26T17:55:11.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-26T17:55:11.950Z] > authorizing via signed-in user
+[debug] [2019-03-26T17:55:11.950Z] [iam] checking project redsociallaboratortia for permissions ["firebase.projects.get"]
+[debug] [2019-03-26T17:55:11.951Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/redsociallaboratortia:testIamPermissions  
+
+[debug] [2019-03-26T17:55:14.836Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-26T17:55:14.838Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/redsociallaboratortia  
+ 
+[debug] [2019-03-26T17:55:15.189Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/perlameketrefetovargarcia/laboratoria/GDL002-social-network'...
+[info] 
+[debug] [2019-03-26T17:55:15.192Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/97649702787/clients/_:getWebAppConfig  
+ 
+[debug] [2019-03-26T17:55:15.679Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000

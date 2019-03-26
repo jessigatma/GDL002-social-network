@@ -1,0 +1,22 @@
+.textLogo{
+  justify-content:center;
+  margin-top:-1.5%;
+}
+
+.input{
+
+  background-color: #E8E7E7;
+  width: 20%;
+}
+
+.btn{
+background-color: #f38a0a;
+}
+
+.google{
+  border-width: 10%;
+}
+
+.hide{
+  display:none;
+}

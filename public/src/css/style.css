@@ -1,0 +1,10 @@
+*{
+  margin:0;
+  text-align: center;
+  -wenkit-background-size:cover;
+  -moz-background-size:cover;
+  background-size: cover;
+}
+
+body{
+}
