@@ -19,28 +19,38 @@
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
   </head>
-  <body>
+
+
          <section class="imgLogo">
+
+          </section>
+          <!--login-->
+        <form class= "container active" id="log-in" data-tab-for="login" href="#login">
+
+
           <div><img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/> </div>
           <div class="textLogo"><img alt="" src="src/imagenes/poua-text-mobile.png" width="100%"/> </div>
-        </section>
-      <!--  <section class="imgLogo" width="400" height="400">
-      </section> -->
-
-
-
-        <!--login-->
-        <form class= "container active" id="log-in" data-tab-for="login">
-            <input type="email" id="email" class="input" placeholder="email"></<input>
-            <input type = "password" id="password" class= "input" placeholder="contraseña"></<input>
+            <input type="email" id="emaiLogin" class="input" placeholder="email"></<input>
+            <input type = "password" id="passwordLogin" class= "input" placeholder="contraseña"></<input>
             <div class="error" id="error-m"></div>
             <button id="btnLogin" class="btn">Entrar</<button>
-        </form>
 
-        <button id="createAccount" class="btnCreate">Crear Cuenta</<button>
+              <button>
+                <a class="google" id="btnGmail" href="#"><i class="fab fa-google"></i> Ingresar con cuenta de Google</a>
+              </button>
+              <div>
+                  <p>¿No tienes cuenta? <a id="createAccount" href="#">Crear Cuenta</a></p>
+              </div>
+
+        </form>
 
         <!--register-->
         <form class= "container hide" id="register" data-tab-for="register">
+
+          <div><img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/> </div>
+          <div class="textLogo"><img alt="" src="src/imagenes/poua-text-mobile.png" width="100%"/> </div>
+
+
             <input type="email" id="email" class="input" placeholder="email"></<input>
             <input type = "password" id="password" class= "input" placeholder="contraseña"></<input>
             <div class="error" id="error-m"></div>
@@ -58,7 +68,7 @@
 
 
 
-
+      <script src="src/js/firebase.js" type="module"></script>
       <script src="src/js/auth.js" type="module"></script>
       <script src="src/js/form.js" type="module"></script>
 

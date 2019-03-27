@@ -1,14 +1,13 @@
-import {registerUser, gmailLogIn, loginUserWithEmail} from '../js/auth.js';
+import {registerUser, gmailLogIn, loginUserWithEmail} from './auth.js';
 
-//-------------------------window.history.pushstate-------------------------
-let tabs = document.querySelectorAll('[data-tab-for]');
+/*let tabs = document.querySelectorAll('[data-tab-for]');
 
         history.replaceState({
           tabForId:tabs[0].dataset.tabFor
         },null, tabs[0].dataset.tabFor);
 
 
-    const showRegister = () =>{
+    export const showRegister = () =>{
         tabs[1].classList.remove('hide');
         tabs[1].classList.add('active');
 
@@ -19,21 +18,24 @@ let tabs = document.querySelectorAll('[data-tab-for]');
           tabForId: tabs[1].dataset.tabFor
         }, null, tabs[1].dataset.tabFor);
       }
-document.getElementById('createAccount').addEventListener('click',showRegister, false);
+document.getElementById('createAccount').addEventListener('click',showRegister, false);*/
 
-  //const btnLogout = document.getElementById('btnLogout');
+
+
+
+
 
 //registar al usuario.
-const registerWithEmailAndPassword = () => {
-     const textEmail = document.getElementById('email').value;
-     const textPassword = document.getElementById('password').value;
-     registerUser(textEmail, textPassword);
+export const registerWithEmailAndPassword = () => {
+     const email = document.getElementById('email').value;
+     const password = document.getElementById('password').value;
+     registerUser(email, password);
   };
   document.getElementById('btnSignUp').addEventListener('click', registerWithEmailAndPassword);
 
 //iniciar sesion con el password
-const signInWithEmailAndPassword = () => {
-     const textEmail = document.getElementById('email').value;
+export const signInWithEmailAndPassword = () => {
+     const textEmail = document.getElementById('emaiLogin').value;
      const textPassword = document.getElementById('password').value;
      loginUserWithEmail(textEmail, textPassword);
   };
@@ -41,7 +43,7 @@ const signInWithEmailAndPassword = () => {
 
 
 //iniciar sesion con google
-const logInGoogle = () => {
+export const logInGoogle = () => {
      //alert("hola")
      gmailLogIn();
   };

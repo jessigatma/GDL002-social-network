@@ -1,7 +1,7 @@
 export const registerUser = (email, password) => {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function () {
-            //checkEmail();
+            checkEmail();
         })
         .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');
 };
