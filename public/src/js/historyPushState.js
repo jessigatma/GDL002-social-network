@@ -12,17 +12,23 @@ export const changeHash = (nameHash) => {
 
  const changeRouter = (hash) => {
     if (hash === '#/' || hash === '' || hash === '#') {
-      return showTemplate(hash); //el que carga por defecto, primera vez :3
+      return showTemplate(hash); //el que carga por defecto, primera vez
     } else if (hash === '#/signup' || hash=== '#/signin' || hash === '#/home') {
       return showTemplate(hash);
     } else {
       return showTemplate('#/404');
     }
-    // return showTemplate(hash);
   };
 
+
+
+
   const showTemplate = (routers) => {
+
+
     const router = routers.substr(2, routers.length - 2);
+
+
     const container = document.getElementById("container");
     container.innerHTML = '';
 

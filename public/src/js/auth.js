@@ -1,13 +1,9 @@
-export const checkEmail = () =>
-  firebase.auth().currentUser.sendEmailVerification();
-
-
 export const registerUser = (email, password) => {
      firebase.auth().createUserWithEmailAndPassword(email, password)
-        /*.then(function () {
+        .then(function () {
             checkEmail();
         })
-        .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');*/
+        .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');
 };
 
 export const loginUserWithEmail = (email, password) => {
@@ -18,7 +14,8 @@ export const loginUserWithEmail = (email, password) => {
 //Ingresar con cuenta google (Documentación de Firebase)
  export const gmailLogIn = () => {
     let provider = new firebase.auth.GoogleAuthProvider(); //Se crea una instancia del objeto del proveedor de Google
-    firebase.auth().signInWithPopup(provider).then(function (result) {
+    firebase.auth().signInWithPopup(provider)
+      .then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API. (acceso a google)
         let token = result.credential.accessToken;
         // The signed-in user info. (informacion del usuario que inicia sesión)
@@ -38,4 +35,16 @@ export const loginUserWithEmail = (email, password) => {
         document.getElementById('error-m').innerHTML = errorCode + errorMessage + email + credential;
     });
 
+};
+
+
+function checkEmail() {
+    firebase.auth().currentUser.sendEmailVerification()
+        .then(function () {
+            //console.log("correo enviado")
+            document.getElementById('app').innerHTML = "Confirma tu cuenta desde tu Email"
+        })
+        .catch(error => {
+            document.getElementById('app').innerHTML = "Ingrese su email"
+        })
 };

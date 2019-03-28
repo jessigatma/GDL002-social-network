@@ -1,11 +1,210 @@
 *{
   margin:0;
   text-align: center;
-
 }
 
 body{
   background-image: url('imagenes/red-bg-350.png');
   background-attachment: fixed;
   background-repeat: repeat;
+}
+
+/*Estilos para menu en escritorio*/
+header {
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+        background-color: #ED007D;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+header .nav {
+        width: 90%;
+        max-width: 1000px;
+        margin: 20px auto;
+        background-color: #ED007D;
+}
+header .nav ul {
+        overflow: hidden;
+        list-style: none;
+}
+header .nav ul li {
+        float: left;
+}
+header .nav ul li a{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        color: #ffffff;
+        display: inline-block;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        text-decoration: none;
+}
+header .nav ul li a:hover {
+        background: #CA076E;
+}
+/*Estilos para menu en mobile*/
+.mobile-barMenu {
+        display: none;
+}
+@media screen and (max-width:800px) {
+        header .nav {
+                width: 75%;
+                height: 100%;
+                margin: 0;
+                position: fixed;
+        }
+        header .nav ul li {
+                display: block;
+                float: none;
+                border-bottom: 1px solid rgbs(255,255,255, .3);
+                text-align: left;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+        }
+        .mobile-barMenu {
+                display: block;
+                width: 100%;
+                background: #ED007D
+        }
+        .mobile-barMenu {
+                display: block;
+                padding: 20px;
+                background: #ED007D;
+                color: #ffffff;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        }
+        .mobile-barMenu i {
+                float: right;
+                font-size: 40px;
+        }
+        i {
+                margin: 0;
+                padding: 0;
+        }
+}
+.textLogo{
+  justify-content:center;
+  margin-top:-1.5%;
+}
+
+/*estilos para el inicio*/
+.input{
+
+  background-color: #E8E7E7;
+  width: 20%;
+}
+
+.btn{
+background-color: #f38a0a;
+}
+
+.google{
+  border-width: 10%;
+}
+
+.hide{
+  display:none;
+}
+
+/* Estilos para pantalla index*/
+.index {
+        padding-top: 9rem;
+        width: 80%;
+        margin: auto;
+        background-color: #ffffff;
+        box-sizing: content-box;
+        background-attachment: scroll;
+}
+.post {
+        justify-content: center;
+        margin: auto;
+        box-sizing: content-box;
+}
+.createPost {
+        border-radius: 0.3125rem;
+        outline: none;
+        width: 90%;
+
+        background-color: #ffffff;
+        text-align: left;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+}
+.era {
+        width: 9.8rem;
+}
+.privacy {
+        width: 6.875rem;
+}
+.era, .privacy {
+        border-radius: 0.3125rem;
+        border: 0.125rem solid #FF9C08;
+        background-color: transparent;
+        font-size: 0.9rem;
+        height: 2.5rem;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+}
+.makePost-btn{
+        background-color: #F1C711;
+        border-radius: 0.3125rem;
+        border: 0;
+        width: 6.875rem;
+        height: 2.5rem;
+        font-family: 'Roboto', sans-serif;
+}
+.makePost-btn:hover {
+        background-color: #FF9C08;
+}
+/*Estilo para footer mobile*/
+.mobile-foot {
+        display: none;
+}
+.foot-parr {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.2rem;
+        color: #ffffff;
+        text-align: center;
+        padding: 1rem;
+}
+@media screen and (max-width:800px) {
+        .nav {
+                display: none;
+        }
+        .mobile-foot {
+                display: block;
+                width: 100%;
+                height: 3.75rem;
+                background-color: #22A438;
+                position: fixed;
+                bottom: 0;
+        }
+        i {
+                margin-left: 1.3rem;
+                margin-right: 1.3rem;
+                padding-top: 1rem;
+        }
+        .menu-icon {
+                color: #F1C711;
+                padding-bottom: 1rem;
+        }
+        .menu-btn {
+                background-color: #ED007D;
+                border: 0;
+        }
+}
+/*Estilo para footer desktop*/
+footer {
+        width: 100%;
+        height: 3.75rem;
+        background-color: #22A438;
+        position: fixed;
+        bottom: 0;
+}
+i {
+        margin-left: 1.3rem;
+        margin-right: 1.3rem;
+        padding-top: 1rem;
 }

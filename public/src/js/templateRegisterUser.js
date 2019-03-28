@@ -24,7 +24,7 @@ export const pageSignUp = () => {
                 </section>
                   `;
 
-      formElemtTwo.classList.add('register');
+      //formElemtTwo.classList.add('register');
       formElemtTwo.innerHTML = template;
       const btnRegister = formElemtTwo.querySelector('#btnSignUp');
       btnRegister.addEventListener( 'click', () => {
