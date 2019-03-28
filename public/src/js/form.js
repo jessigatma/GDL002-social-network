@@ -1,4 +1,5 @@
 import {registerUser, gmailLogIn, loginUserWithEmail} from './auth.js';
+import{changeHash} from './historyPushState.js';
 
 /*let tabs = document.querySelectorAll('[data-tab-for]');
 
@@ -30,16 +31,24 @@ export const registerWithEmailAndPassword = () => {
      const email = document.getElementById('email').value;
      const password = document.getElementById('password').value;
      registerUser(email, password);
+
   };
-  document.getElementById('btnSignUp').addEventListener('click', registerWithEmailAndPassword);
+//  document.getElementById('btnSignUp').addEventListener('click', registerWithEmailAndPassword);
 
 //iniciar sesion con el password
 export const signInWithEmailAndPassword = () => {
      const textEmail = document.getElementById('emaiLogin').value;
-     const textPassword = document.getElementById('password').value;
+     const textPassword = document.getElementById('passwordLogin').value;
      loginUserWithEmail(textEmail, textPassword);
+        .then(function(){
+           changeHash('/home');
+
+         })
+
+        .catch((e) => {console.log(e);
+         document.querySelector("#message").style.display = "block";})
   };
-  document.getElementById('btnLogin').addEventListener('click', signInWithEmailAndPassword);
+//  document.getElementById('btnLogin').addEventListener('click', signInWithEmailAndPassword);
 
 
 //iniciar sesion con google
@@ -47,4 +56,4 @@ export const logInGoogle = () => {
      //alert("hola")
      gmailLogIn();
   };
-  document.getElementById('btnGmail').addEventListener('click', logInGoogle);
+//  document.getElementById('btnGmail').addEventListener('click', logInGoogle);

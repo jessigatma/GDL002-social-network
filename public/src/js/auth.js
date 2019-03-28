@@ -1,14 +1,18 @@
+export const checkEmail = () =>
+  firebase.auth().currentUser.sendEmailVerification();
+
+
 export const registerUser = (email, password) => {
      firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function () {
+        /*.then(function () {
             checkEmail();
         })
-        .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');
+        .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');*/
 };
 
 export const loginUserWithEmail = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
-        .catch(error => document.getElementById('error-m').innerHTML = 'Usuario sin registrarse');
+        .catch(() => document.getElementById('error-m').innerHTML = 'Usuario sin registrarse');
 };
 
 //Ingresar con cuenta google (Documentación de Firebase)
@@ -19,7 +23,7 @@ export const loginUserWithEmail = (email, password) => {
         let token = result.credential.accessToken;
         // The signed-in user info. (informacion del usuario que inicia sesión)
         let user = result.user;
-        console.log(user);
+        console.log(user, token);
 
         // ...
     }).catch(function (error) {

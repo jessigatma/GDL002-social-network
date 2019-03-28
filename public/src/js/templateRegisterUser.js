@@ -24,15 +24,17 @@ export const pageSignUp = () => {
                 </section>
                   `;
 
-      formElemtTwo.classList.add('register')
+      formElemtTwo.classList.add('register');
       formElemtTwo.innerHTML = template;
       const btnRegister = formElemtTwo.querySelector('#btnSignUp');
       btnRegister.addEventListener( 'click', () => {
-      registerWithEmailAndPassword()});
+      registerWithEmailAndPassword();
+    });
 
       const btnSignInWithGoogle = formElemtTwo.querySelector('#btnGmail');
       btnSignInWithGoogle.addEventListener( 'click', () => {
-          logInGoogle()});
+          logInGoogle();
+        });
 
       return formElemtTwo;
 };

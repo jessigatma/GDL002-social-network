@@ -1,3 +1,6 @@
+import { initRouter } from './historyPushState.js';
+
+  const inicializa = () => {
 
     /*const config = {
         apiKey: "AIzaSyDLsQLjAYWtZaPcvhuC1MBnWeYf7k3WMcU",
@@ -9,4 +12,7 @@
       };
       firebase.initializeApp(config);*/
 
-    
+    initRouter();
+  };
+
+  window.addEventListener('load', inicializa);

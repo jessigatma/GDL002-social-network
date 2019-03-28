@@ -23,20 +23,21 @@ export const pageSignIn = () => {
                         </section>
                     `;
 
-    formElem.classList.add('login')
+    formElem.classList.add('login');
     formElem.innerHTML = formSignIn;
 
 
     const btnSignIn = formElem.querySelector('#btnLogin');
 
     btnSignIn.addEventListener( 'click', () => {
-        signInWithEmailAndPassword()
+        signInWithEmailAndPassword();
       });
 
 
     const btnSignInWithGoogle = formElem.querySelector('#btnGmail');
 
     btnSignInWithGoogle.addEventListener( 'click', () => {
-        logInGoogle()});
+        logInGoogle();
+      });
      return formElem;
   };

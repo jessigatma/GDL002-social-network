@@ -8,24 +8,14 @@
        crossorigin="anonymous">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/fromstyle.css">
-    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.9.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.9.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.9.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
   </head>
 
+<body>
+      <div id="container">
+      </div>
 
-         <section class="imgLogo">
-
-          </section>
           <!--login-->
-        <form class= "container active" id="log-in" data-tab-for="login" href="#login">
+      <!--  <form class= "container active" id="log-in" data-tab-for="login" href="#login">
 
 
           <div><img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/> </div>
@@ -42,9 +32,10 @@
                   <p>¿No tienes cuenta? <a id="createAccount" href="#">Crear Cuenta</a></p>
               </div>
 
-        </form>
+        </form>-->
 
         <!--register-->
+        <!--
         <form class= "container hide" id="register" data-tab-for="register">
 
           <div><img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/> </div>
@@ -54,16 +45,17 @@
             <input type="email" id="email" class="input" placeholder="email"></<input>
             <input type = "password" id="password" class= "input" placeholder="contraseña"></<input>
             <div class="error" id="error-m"></div>
-            <button id="btnSignUp" class="btn">Registrarse</<button>
+            <button id="btnSignUp" class="btn">Registrarse</<button>-->
               <!--<button id="btnLogout" class="btn">Logout</<button>-->
-              <button>
+
+            <!--  <button>
                 <a class="google" id="btnGmail" href="#"><i class="fab fa-google"></i> Ingresar con cuenta de Google</a>
               </button>
         </form>
 
         <section id="index" class="hide" data-tab-for="index">
 
-        </section>
+        </section>-->
 
 
 
@@ -72,6 +64,15 @@
       <script src="src/js/auth.js" type="module"></script>
       <script src="src/js/form.js" type="module"></script>
 
-
+      <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+      <!-- update the version number as needed -->
+      <script defer src="/__/firebase/5.9.0/firebase-app.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <script defer src="/__/firebase/5.9.0/firebase-auth.js"></script>
+      <script defer src="/__/firebase/5.9.0/firebase-database.js"></script>
+      <script defer src="/__/firebase/5.9.0/firebase-messaging.js"></script>
+      <script defer src="/__/firebase/5.9.0/firebase-storage.js"></script>
+      <!-- initialize the SDK after all desired features are loaded -->
+      <script defer src="/__/firebase/init.js"></script>
       </body>
     </html>
