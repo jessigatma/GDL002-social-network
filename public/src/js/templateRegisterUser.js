@@ -3,7 +3,7 @@ import {registerWithEmailAndPassword, logInGoogle} from './form.js';
 
 export const pageSignUp = () => {
     const formElemtTwo = document.createElement('form');
-    const template = `
+     const templateRegisterUser = `
                 <section>
                 <img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/>
                 <img alt="" src="src/imagenes/poua-text-mobile.png" width="100%"/>
@@ -24,8 +24,10 @@ export const pageSignUp = () => {
                 </section>
                   `;
 
-      formElemtTwo.classList.add('register');
+      //formElemtTwo.classList.add('register');
       formElemtTwo.innerHTML = template;
+
+
       const btnRegister = formElemtTwo.querySelector('#btnSignUp');
       btnRegister.addEventListener( 'click', () => {
       registerWithEmailAndPassword();
