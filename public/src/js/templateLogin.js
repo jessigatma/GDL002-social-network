@@ -2,7 +2,7 @@ import {signInWithEmailAndPassword, logInGoogle} from './form.js';
 
 export const pageSignIn = () => {
     const formElem = document.createElement('form');
-    const formSignIn = `
+     const formSignIn = `
                       <section>
                         <img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/>
                         <img alt="" src="src/imagenes/poua-text-mobile.png" width="100%"/>
@@ -22,7 +22,6 @@ export const pageSignIn = () => {
                         </section>
                     `;
 
-  //  formElem.classList.add('login');
     formElem.innerHTML = formSignIn;
 
 

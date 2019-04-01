@@ -1,5 +1,6 @@
 import {savePost, readPost, readPostUser, object, objectComplete, findObjectByKey, saveEditPost} from './post.js';
-
+//import{onNav} from './changePage.js';
+import {handleRegister, handleLogin} from './changePage.js'
 
 //Funcion para mostrar menu mobile
 const btnMenu = document.getElementById('menu-btn');
@@ -47,7 +48,7 @@ let createId = (function() {
         return id;
     }
 })();
-const savePostFromDatabase = () => {
+ export const savePostFromDatabase = () => {
      readPost((post)=>{
     document.getElementById('postPublished').innerHTML =
     `<div class="row space">

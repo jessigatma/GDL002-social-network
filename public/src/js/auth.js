@@ -1,3 +1,6 @@
+import {savePostFromDatabase} from './main.js';
+import {handleRegister, handleLogin} from './changePage.js';
+
 export const registerUser = (email, password) => {
      firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function () {
@@ -6,10 +9,14 @@ export const registerUser = (email, password) => {
         .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');
 };
 
+
+
 export const loginUserWithEmail = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .catch(() => document.getElementById('error-m').innerHTML = 'Usuario sin registrarse');
 };
+
+
 
 //Ingresar con cuenta google (Documentación de Firebase)
  export const gmailLogIn = () => {
@@ -38,7 +45,7 @@ export const loginUserWithEmail = (email, password) => {
 };
 
 
-function checkEmail() {
+export const checkEmail=()=> {
     firebase.auth().currentUser.sendEmailVerification()
         .then(function () {
             //console.log("correo enviado")
@@ -48,3 +55,16 @@ function checkEmail() {
             document.getElementById('app').innerHTML = "Ingrese su email"
         })
 };
+
+export const watcher=()=>{
+  firebase.auth().onAuthStateChanged(function (user){
+    if(user){
+      //savePostFromDatabase();
+      handleRegister ();
+
+    }else{
+      handleLogin();
+    }
+  });
+  watcher();
+}

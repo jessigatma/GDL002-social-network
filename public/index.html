@@ -11,10 +11,12 @@
 
   </head>
 
-<body>
-
+<!--body>
+  <div id="container">
+</div>
+-->
   <header>
-    <section class="mobile-barMenu">
+    <section class="mobile-barMenu hide">
       <a class="logoNav-mobile" href="#"><img src="src/imagenes/logo-poua-app.png" width="180"></a>
       <button id="menu-btn" class="menu-btn"><i class="fas fa-bars 2x menu-icon"></i></button>
    </section>
@@ -30,14 +32,13 @@
      </ul>
    </nav>
   </header>
-    <!--  <div id="container">
-    </div>-->
+
 
           <!--login-->
-        <form class= "container active" id="log-in" data-tab-for="login" href="#login">
+        <form class= "container active" id="login" data-tab-for="login" href="#login">
 
 
-        <!--  <div><img alt="inicio poua" src="src/imagenes/inicio-mobile.png" width="100%"/> </div>-->
+          <div><img alt="inicio poua" src="src/imagenes/inicio-mobile.png" width="100%"/> </div>
           <div class="textLogo"><img alt="" src="src/imagenes/poua-text-mobile.png" width="100%"/> </div>
             <input type="email" id="emaiLogin" class="input" placeholder="email"></<input>
             <input type = "password" id="passwordLogin" class= "input" placeholder="contraseña"></<input>
@@ -48,7 +49,7 @@
                 <a class="google" id="btnGmail" href="#"><i class="fab fa-google"></i> Ingresar con cuenta de Google</a>
               </button>
               <div>
-                  <p>¿No tienes cuenta? <a id="createAccount" href="#home">Crear Cuenta</a></p>
+                  <p>¿No tienes cuenta? <a id="createAccount" href="#register">Crear Cuenta</a></p>
               </div>
 
         </form>
@@ -65,7 +66,7 @@
             <input type = "password" id="password" class= "input" placeholder="contraseña"></<input>
             <div class="error" id="error-m"></div>
             <button id="btnSignUp" class="btn">Registrarse</<button>
-              <!--<button id="btnLogout" class="btn">Logout</<button>-->
+              <!--button id="btnLogout" class="btn">Logout</<button>-->
 
             <button>
                 <a class="google" id="btnGmail" href="#"><i class="fab fa-google"></i> Ingresar con cuenta de Google</a>
@@ -78,7 +79,8 @@
 
 
         <!--post-->
-   <article class="post">
+  <section id="post" class="hide" data-tab-for="post">
+   <article class="post" >
      <img src="src/imagenes/boy.png" alt="user" width="45" height="45" class="user">
      <textarea name="Crea una publicación" id="createPost" class="createPost" cols="50" rows="15" placeholder="Cuenta la historia de un lugar que conoces"></textarea>
      <article>
@@ -105,10 +107,10 @@
      </article>
    </article>
  </section>
- <footer class="desktop-foot">
+ <footer class="desktop-foot hide">
    <p class="foot-parr">Powered By Perla, Jess & Itinna. 2019</p>
  </footer>
- <footer class="mobile-foot">
+ <footer class="mobile-foot hide">
      <i class="fas fa-home fa-2x" style="color: #ffffff;"></i>
      <i class="fas fa-user fa-2x" style="color: #ffffff;"></i>
      <i class="fas fa-calendar-plus fa-2x" style="color: #ffffff;"></i>
@@ -120,9 +122,13 @@
 
 
         <script src="src/js/auth.js" type="module"></script>
-        <script src="src/js/post.js" type="module"></script>
+        <!--<script src="src/js/post.js" type="module"></script>-->
        <script src="src/js/main.js" type="module"></script>
       <script src="src/js/form.js" type="module"></script>
+      <script src="src/js/changePage.js" type="module"></script>
+      <script src="src/js/templateLogin.js" type="module"></script>
+      <script src="src/js/templateRegisterUser.js" type="module"></script>
+      <script src="src/js/templatePerfil.js" type="module"></script>
 
       <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
       <!-- update the version number as needed -->
