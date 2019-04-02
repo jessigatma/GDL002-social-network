@@ -1,16 +1,16 @@
 import {savePost, readPost, readPostUser, object, objectComplete, findObjectByKey, saveEditPost} from './post.js';
 //import{onNav} from './changePage.js';
-import {handleRegister, handleLogin} from './changePage.js'
+//import {handleRegister, handleLogin} from './changePage.js'
 
 //Funcion para mostrar menu mobile
-const btnMenu = document.getElementById('menu-btn');
+/*const btnMenu = document.getElementById('menu-btn');
 const mobileNav = document.querySelector('nav');
 const showMobileMenu = () => {
     if(mobileNav.style.display = 'none'){
         mobileNav.style.display = 'block';
     }
 };
-btnMenu.addEventListener('click', showMobileMenu);
+btnMenu.addEventListener('click', showMobileMenu);*/
 
 
 let miFechaActual = new Date();
@@ -29,9 +29,8 @@ const savePostIntoDatabase = () => {
     document.getElementById('createPost').value ="";
   //  savePostUser(userName, post, photo, datePost);
 };
-document.getElementById('public').addEventListener('click', ()=>{
-   savePostIntoDatabase();
-});
+//document.getElementById('public').addEventListener('click', ()=>{
+   //savePostIntoDatabase();
 
 
 // Crea una iD única

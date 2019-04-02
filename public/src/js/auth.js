@@ -1,6 +1,3 @@
-import {savePostFromDatabase} from './main.js';
-import {handleRegister, handleLogin} from './changePage.js';
-
 export const registerUser = (email, password) => {
      firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(function () {
@@ -13,6 +10,7 @@ export const registerUser = (email, password) => {
 
 export const loginUserWithEmail = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => changeHash())
         .catch(() => document.getElementById('error-m').innerHTML = 'Usuario sin registrarse');
 };
 
@@ -59,7 +57,8 @@ export const checkEmail=()=> {
 export const watcher=()=>{
   firebase.auth().onAuthStateChanged(function (user){
     if(user){
-      //savePostFromDatabase();
+      savePostFromDatabase();
+      //showPost();
       handleRegister ();
 
     }else{

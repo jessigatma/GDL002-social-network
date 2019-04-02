@@ -1,8 +1,8 @@
-import {signInWithEmailAndPassword, logInGoogle} from './form.js';
+import {signInWithEmailAndPassword, logInGoogle} from './userValue.js';
 
-export const pageSignIn = () => {
-    const formElem = document.createElement('form');
-     const formSignIn = `
+export let loginUser = () => {
+   const formElem = document.createElement('form');
+     let formSignIn= `
                       <section>
                         <img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/>
                         <img alt="" src="src/imagenes/poua-text-mobile.png" width="100%"/>
@@ -36,6 +36,6 @@ export const pageSignIn = () => {
 
     btnSignInWithGoogle.addEventListener( 'click', () => {
         logInGoogle();
-      });
+     });
      return formElem;
   };

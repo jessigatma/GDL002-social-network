@@ -1,9 +1,8 @@
-import {registerWithEmailAndPassword, logInGoogle} from './form.js';
+import {registerWithEmailAndPassword, logInGoogle} from './userValue.js';
 
-
-export const pageSignUp = () => {
+export let registerUser = () => {
     const formElemtTwo = document.createElement('form');
-     const templateRegisterUser = `
+   let templateRegisterUser = `
                 <section>
                 <img alt="" src="src/imagenes/inicio-mobile.png" width="100%"/>
                 <img alt="" src="src/imagenes/poua-text-mobile.png" width="100%"/>
@@ -24,8 +23,8 @@ export const pageSignUp = () => {
                 </section>
                   `;
 
-      //formElemtTwo.classList.add('register');
-      formElemtTwo.innerHTML = template;
+      formElemtTwo.classList.add('register');
+      formElemtTwo.innerHTML = templateRegisterUser;
 
 
       const btnRegister = formElemtTwo.querySelector('#btnSignUp');
