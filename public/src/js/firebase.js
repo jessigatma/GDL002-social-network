@@ -1,4 +1,4 @@
-import { initRouter } from './historyPushState.js';
+import { initRouter } from './changePage.js';
 
   const inicializa = () => {
 
