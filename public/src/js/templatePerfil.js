@@ -1,4 +1,4 @@
-export let home = (posts) => {
+export let wall = (posts) => {
     const divElem = document.createElement('div');
     //divElem.classList.add("section");
      let viewHome = `

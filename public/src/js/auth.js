@@ -1,17 +1,33 @@
+import { changeHash }from "./changePage.js";
+
+export const watcher=()=>{
+  firebase.auth().onAuthStateChanged((firebaseUser) => {
+        if (firebaseUser) {
+            console.log("Ingreso un usuario >" + JSON.stringify(firebaseUser));
+            callback(firebaseUser)
+        } else {
+            console.log('No está logueado')
+            callback(null)
+        }
+    })
+};
+
+
 export const registerUser = (email, password) => {
      firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function () {
-            checkEmail();
-        })
-        .catch(() => document.getElementById('error-m').innerHTML = 'Crear usuario');
+        .then(()=>{checkEmail();
+          changeHash('/profile')})
+        .catch((e) => {console.log(e);
+          document.getElementById('menssage2').innerHTML = 'No se ingreso usuario, e-mail o contraseña'})
 };
 
 
 
 export const loginUserWithEmail = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => changeHash())
-        .catch(() => document.getElementById('error-m').innerHTML = 'Usuario sin registrarse');
+          .then(() => changeHash('/profile'))
+          .catch((e) => {console.log(e);
+           document.getElementById('message').innerHTML = 'Usuario o contraseña incorrectos'})
 };
 
 
@@ -19,51 +35,23 @@ export const loginUserWithEmail = (email, password) => {
 //Ingresar con cuenta google (Documentación de Firebase)
  export const gmailLogIn = () => {
     let provider = new firebase.auth.GoogleAuthProvider(); //Se crea una instancia del objeto del proveedor de Google
-    firebase.auth().signInWithPopup(provider)
-      .then(function (result) {
-        // This gives you a Google Access Token. You can use it to access the Google API. (acceso a google)
-        let token = result.credential.accessToken;
-        // The signed-in user info. (informacion del usuario que inicia sesión)
-        let user = result.user;
-        console.log(user, token);
-
-        // ...
-    }).catch(function (error) {
-        // Handle Errors here. (manejar errores)
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        // The email of the user's account used. (email de la cuenta de usuario utilizado)
-        let email = error.email;
-        // The firebase.auth.AuthCredential type that was used. (tipo de identificador usado por firebase)
-        let credential = error.credential;
-        // ...
-        document.getElementById('error-m').innerHTML = errorCode + errorMessage + email + credential;
-    });
+    firebase.auth().signInWithPopup(provider)//accede al objeto y te muestra la ventana emergente.
+      .then(()=> changeHash('/profile'))//haces la promesa... de que si entra con google te cambie el has al muro.
+     .catch((error) =>{console.log(e)});//nos sale en la consola los errores.
 
 };
 
-
+//confirma el mail
 export const checkEmail=()=> {
-    firebase.auth().currentUser.sendEmailVerification()
-        .then(function () {
-            //console.log("correo enviado")
-            document.getElementById('app').innerHTML = "Confirma tu cuenta desde tu Email"
-        })
-        .catch(error => {
-            document.getElementById('app').innerHTML = "Ingrese su email"
-        })
+  firebase.auth().currentUser.sendEmailVerification()
+
 };
 
-export const watcher=()=>{
-  firebase.auth().onAuthStateChanged(function (user){
-    if(user){
-      savePostFromDatabase();
-      //showPost();
-      handleRegister ();
 
-    }else{
-      handleLogin();
-    }
-  });
-  watcher();
-}
+
+//salir del muro
+export const gOut = () =>{
+    firebase.auth().signOut()//
+     .then(()=> changeHash('/register'))
+     .catch((e)=> {console.log(e)})
+};

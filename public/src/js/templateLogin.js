@@ -10,14 +10,14 @@ export let loginUser = () => {
                         <form class= "container active" id="log-in" data-tab-for="login">
                               <input type="email" id="emaiLogin" class="input" placeholder="email"></<input>
                               <input type = "password" id="passwordLogin" class= "input" placeholder="contraseña"></<input>
-                              <div id="message"><p>Usuario o contraseña incorrectos</p></div>
+                              <div id="message"><p></p></div>
                               <button id="btnLogin" class="btn">Entrar</<button>
                               <button>
                                   <a class="google" id="btnGmail" href="#"><i class="fab fa-google"></i> Ingresar con cuenta de Google</a>
                                 </button>
                           </form>
                         <div class="register">
-                            <p>¿No tienes cuenta? <a id="createAccount" href="#/signup">Crear Cuenta</a></p>
+                            <p>¿No tienes cuenta? <a id="createAccount" href="#/register">Crear Cuenta</a></p>
                         </div>
                         </section>
                     `;

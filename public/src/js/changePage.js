@@ -1,6 +1,6 @@
 import {loginUser} from './templateLogin.js';
 import {registerUser} from './templateRegisterUser.js';
-import {home} from './templatePerfil.js';
+import {wall} from './templatePerfil.js';
 
 //export const content = document.getElementById('container');
 
@@ -24,14 +24,6 @@ export let onNav = (pathName)=>{
 
 content.innerHTML = routers[window.location.pathname];
 //console.log(routers);
-
-
-/*export const handleRegister=(firebaseUser)=>{
-  location.hash='#register';
-}
-
-export const handleLogin=()=>{
-  location.hash='#login';
 }*/
 
 
@@ -43,7 +35,7 @@ export const changeHash = (nameHash) => {
  export const changeRouter = (hash) => {
     if (hash === '#/' || hash === '' || hash === '#') {
       return showTemplate(hash); //el que carga por defecto, primera vez
-    } else if (hash === '#/login' || hash=== '#/signup' || hash === '#/home') {
+    } else if (hash === '#/login' || hash=== '#/register' || hash === '#/profile') {
       return showTemplate(hash);
     } else {
       return showTemplate('#/404');
@@ -53,7 +45,7 @@ export const changeHash = (nameHash) => {
 
 
 
-  const showTemplate = () => {
+  const showTemplate = (routers) => {
 
 
     const router = routers.substr(2, routers.length - 2);
@@ -70,16 +62,15 @@ export const changeHash = (nameHash) => {
         break;
 
 
-      case 'signup':
+      case 'register':
         container.appendChild(registerUser());
         break;
 
 
-        case 'home':
-          //privacityPost(() => {
+        case 'profile':
+
             container.innerHTML = '';
-            container.appendChild(home());
-        //});
+            container.appendChild(wall());
           break;
         default:
 

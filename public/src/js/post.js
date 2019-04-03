@@ -1,5 +1,5 @@
 /* función para guardar datos (post) en la base de datos Firebase */
-export const savePost = (userName, post, photo, datePost) => {
+/*export const savePost = (userName, post, photo, datePost) => {
     const userId = firebase.auth().currentUser.uid;
     const keyPost = firebase.database().ref('post/').child('post').push().key;
     firebase.database().ref(`post/${keyPost}/`).set({
@@ -20,7 +20,7 @@ export const savePost = (userName, post, photo, datePost) => {
 
 
 /*_______________________________________________________________________- */
-export let objectComplete = [];
+/*export let objectComplete = [];
 export let object = () => {
     firebase.database().ref('post').orderByValue().on("value", function (snapshot) {
         Object.entries(snapshot.val()).forEach(function (data) {
@@ -43,7 +43,7 @@ export const readPostUser = (postChange) => {
 };
 /*_________________________________________________________________________*/
 //Función para buscar elementos por sus keys.
-export function findObjectByKey(array, key, value) {
+/*export function findObjectByKey(array, key, value) {
     const ret = [];
     for (let i = 0; i < array.length; i++) {
         if (array[i][key].includes(value)) {
@@ -59,4 +59,4 @@ export const saveEditPost = (idPost, newText) => {
     const postReference = firebase.database().ref('post/');
     postRef.child(idPost).update({ pospublic: newText });
     postReference.child(idPost).update({ pospublic: newText });
-};
+};*/

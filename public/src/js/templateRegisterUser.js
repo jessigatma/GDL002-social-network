@@ -12,8 +12,7 @@ export let registerUser = () => {
                     <input class= "input" id="name" type="text" placeholder="Elige tu usuario" required></input>
                       <input type="email" id="email" class="input" placeholder="email" required></<input>
                       <input type = "password" id="password" class= "input" placeholder="contraseña"required></<input>
-                      <div id="message2"><p>No se ingreso usuario, e-mail o contraseña</p></div>
-                      <div class="error" id="error-m"></div>
+                      <div id="message2"><p></p></div>
                       <button id="btnSignUp" class="btn">Registrarse</<button>
 
                       <button>
